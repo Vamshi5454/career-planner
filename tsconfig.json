@@ -1,13 +1,37 @@
+// {
+//   "compilerOptions": {
+//     "jsx": "react-jsx",
+//     "target": "ES6",
+//     "module": "commonjs",
+//     "strict": true,
+//     "esModuleInterop": true,
+//     "skipLibCheck": true,
+//     "outDir": "./dist",
+//     "lib": ["dom", "esnext"], // Include DOM and modern JS features
+//     "moduleResolution": "node" // Resolve node modules
+//   },
+//   "include": ["src/**/*"],
+//   "exclude": ["node_modules"]
+// }
+
 {
   "compilerOptions": {
-    "jsx": "react-jsx",
-    "target": "ES6",
-    "module": "commonjs",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "outDir": "./dist"
+    "jsx": "react-jsx", // Correct for React 17+ (no need to import React for JSX)
+    "target": "ES6", // ES6 is fine; you can use ESNext for more modern features
+    "module": "commonjs", // Keep as is unless you're targeting ESM (Node.js >= 14)
+    "strict": true, // Enforce strict type checks (recommended)
+    "esModuleInterop": true, // Ensure compatibility with ES Modules
+    "skipLibCheck": true, // Speeds up builds by skipping library checks
+    "outDir": "./dist", // Output directory for compiled files
+    "lib": ["dom", "esnext"], // Includes DOM types and modern JS features
+    "moduleResolution": "node", // Resolves Node.js-style modules
+    "resolveJsonModule": true, // (Optional) Enable importing `.json` files
+    "baseUrl": "./", // (Optional) Enables relative imports to be resolved from the base directory
+    "paths": {
+      // (Optional) Add aliases for cleaner imports
+      "@/*": ["src/*"]
+    }
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules"]
+  "include": ["src/**/*"], // Includes all files in the src folder
+  "exclude": ["node_modules"] // Excludes node_modules for faster builds
 }

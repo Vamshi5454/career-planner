@@ -6,6 +6,7 @@
     "cra-template-typescript": "1.2.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "react-router-dom": "^7.1.3",
     "react-scripts": "5.0.1"
   },
   "scripts": {
@@ -33,8 +34,13 @@
     ]
   },
   "devDependencies": {
+    "@tailwindcss/postcss7-compat": "^2.2.17",
     "@types/react": "^19.0.7",
     "@types/react-dom": "^19.0.3",
-    "typescript": "^5.7.3"
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.5.1",
+    "postcss-loader": "^8.1.1",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^4.9.5"
   }
 }
