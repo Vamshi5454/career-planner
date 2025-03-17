@@ -1,16 +1,22 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
+interface user {
+  id: string;
+  name: string;
+  password: string;
+}
 const Profile: React.FC = () => {
-  const [user, setUser] = useState<any[]>();
+  const [user, setUser] = useState<string[]>();
   useEffect(() => {
     const getUserDetails = async () => {
       try {
         const userDetails = await axios.get(
-          `http://localhost:3001/user/getUser/1`
+          `http://localhost:3001/user/getUser`,
+          { withCredentials: true }
         );
         setUser(userDetails.data);
-        console.log(userDetails.data);
+        console.log(userDetails);
       } catch (err) {
         console.log(err);
       }
@@ -19,11 +25,7 @@ const Profile: React.FC = () => {
   }, []);
 
   return (
-    <div style={{ backgroundColor: "black" }}>
-      <form>
-        <h1>User details</h1>
-      </form>
-    </div>
+    <div style={{ backgroundColor: "black" }}>{/* <h1>{user.id}</h1> */}</div>
   );
 };
 
